@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz 0.0.12v</title>
+    <link rel="stylesheet" href="formularz.css">
+    <script type="text/javascript" src="przyciski.js"></script>
+</head>
+<body>
+    <form action="" id="formularz" method="">
+        <!-- krok 1 -->
+            <div class="element testowy">
+                <div class="wspolneInfo">
+                    <span class="nazwaElementu wymagane">Wpisz telefon</span>
+                    <input id="formularz-tel" type="tel" placeholder="123 456 789" pattern="[0-9]{9}" title="Podaj numer kontaktowy"  autocomplete="tel" maxlength="11" minlength="9">
+                    <div class="auto">Ten element został skopiowany lub automatycznie wypełniony. Sprawdź czy jest poprawny.</div>
+                    <img src="bank/svg/uwaga.svg" alt="" class="uwaga" width="15px" height="25px">
+                </div>
+                <div class="containerPrzycisk">
+                    <button type="button" class="poprzedni przycisk" >Wróć</button>
+                    <button type="button" class="kolejny przycisk" data-przycisk="0">Dalej</button>
+                </div>
+                <div class="subtelneInfo">
+                    <input type="checkbox" name="subtelna_siadomosc" id="1">
+                    <label for="1" >Dlaczego potrzebujemy numer telefonu?</label>
+                    <div class="subtelne_rozwiazanie">
+                        <p>Służy do kontaktu w przypadku pytań, potwierdzenia zamówienia lub ustalenia szczegółów.</p>    
+                    </div>
+                </div>
+            </div>
+        <!-- krok 2 -->
+        <div class="element testowy">
+            <div class="razem">
+                <div class="pierwszy">
+                    <span class="nazwaElementu wymagane">Wybierz date</span>
+                    <input id="formularz-dzien" type="date" placeholder="Wpisz cos" title="Podaj date" >
+                </div>
+                <div class="pierwszy">
+                    <span class="nazwaElementu wymagane">Wybierz czas</span>
+                    <input id="formularz-godzina" type="time" placeholder="Wpisz cos" title="Podaj godzinę" >
+                </div>
+            </div>
+            <div class="containerPrzycisk">
+                <button type="button" class="poprzedni przycisk">Wróć</button>
+                <button type="button" class="kolejny przycisk"data-przycisk="2">Dalej</button>
+            </div>
+            <div class="subtelneInfo">
+                <input type="checkbox" name="subtelna_siadomos" id="2">
+                <label for="2" >Dlaczego chcemy znać termin?</label>
+                <div class="subtelne_rozwiazanie">
+                    <p>Nie wróżymy z gwiazd – twój wygodny termin pozwala nam zaplanować wszystko z wyprzedzeniem, tak żebyś był zadowolony z obsługi na czas.</p>    
+                </div>
+            </div>
+        </div>
+        <!-- krok 3 -->
+        <div class="element testowy">
+            <span class="nazwaElementu wymagane">Wybierz Adg</span>
+            <select name="" id="formularz-nadwozie" title="Wybierz Adg" >
+                <option value="" disabled selected>Kliknij by wybrać</option>
+                <option value="adb">Wybierz Adg</option>
+                <option value="adb">Wybierz Adg</option>
+                <option value="adb">Wybierz Adg</option>
+                <option value="adb">Wybierz Adg</option>
+                <option value="adb">Wybierz Adg</option>
+                <option value="adb">Wybierz Adg</option>
+            </select>
+            <div class="containerPrzycisk ">
+                <button type="button" class="poprzedni przycisk">Wróć</button>
+                <button type="button" class="kolejny przycisk"data-przycisk="3">Dalej</button>
+            </div>
+        </div>
+        <!-- krok 4 -->
+        <div class="element testowy">
+            <span class="nazwaElementu wymagane">Wybierz Adg</span>
+            <select name="" id="formularz-uslugia" title="Wybierz Adg" >
+                <option value="" disabled selected>Kliknij by wybrać</option>
+                <option value="Adg">Adg</option>
+                <option value="Adg">Adg</option>
+                <option value="Adg">Adg</option>
+                <option value="Adg">Adg</option>
+                <option value="Adg">Adg</option>
+            </select>
+            <div class="containerPrzycisk ">
+                <button type="button" class="poprzedni przycisk">Wróć</button>
+                <button type="button" class="kolejny przycisk"data-przycisk="4">Dalej</button>
+            </div>
+        </div>
+        <!-- krok 5 -->
+        <div class="element testowy">
+            <span class="nazwaElementu wymagane">Jaki jesteś tier</span>
+            <select name="" id="formularz-dojazd" title="Wybierz swoj tier" >
+                <option value="" disabled selected>Kliknij by wybrać tier</option>
+                <option value="S">S tier</option>
+                <option value="L">L tier</option>
+            </select>
+            <div class="containerPrzycisk ">
+                <button type="button" class="poprzedni przycisk">Wróć</button>
+                <button type="button" class="kolejny przycisk" data-przycisk="5">Dalej</button>
+            </div>
+        </div>
+        <!-- krok 6 -->
+        <div class="element testowy">
+            <div class="wspolneInfo">
+                <span class="nazwaElementu wymagane">Wpisz nr. rejestracji</span>
+                <input id="formularz-rejestracja" type="text" autocomplete="off" placeholder="-- ----" title="Podaj adres" maxlength="9" minlength="4">
+                <div class="auto">Ten element został skopiowany lub automatycznie wypełniony. Sprawdź czy jest poprawny.</div>
+                <img src="bank/svg/uwaga.svg" alt="" class="uwaga" width="15px" height="25px">
+            </div>
+            <div class="containerPrzycisk ">
+                <button type="button" class="poprzedni przycisk">Wróć</button>
+                <button type="button" class="kolejny przycisk" data-przycisk="6">Dalej</button>
+            </div>
+            <div class="subtelneInfo">
+                <input type="checkbox" name="subtelna_siadomos" id="6">
+                <label for="6" >Dlaczego musimy znać twój numer rejestracji?</label>
+                <div class="subtelne_rozwiazanie">
+                    <p>Bo chyba nie chcesz, żebyśmy pomylili twoje auto z czyimś innym, szczególnie jeśli obok będzie zaparkowane identyczne auto sąsiada?</p>    
+                </div>
+            </div>
+        </div>
+        <!-- krok 7 -->
+        <div class="element testowy" >
+            <div class="razem">
+                <div class="pierwszy">
+                    <span class="nazwaElementu wymagane">Wpisz adres</span>
+                    <select id="formularz-miasto" name="" id="">
+                        <option value="" disabled selected>Wybierz miasto</option>
+                        <option value="Katowice">Katowice</option>
+                        <option value="Sosnowiec">Sosnowiec</option>
+                    </select>
+                </div>
+                <div class="pierwszy">
+                    <div class="wspolneInfo">
+                        <span class="nazwaElementu">Kod pocztowy: <p>(opcjonalnie)</p></span>
+                        <input id="formularz-kodpocztowy" type="tel" inputmode="numeric" autocomplete="postal-code" placeholder="12-345" title="Podaj adres" maxlength="6" required> 
+                        <img src="bank/svg/uwaga.svg" alt="" class="uwagakd" width="15px" height="25px">
+
+                    </div>
+                </div>
+                <div class="pierwszy" style="grid-column: 1/3;">
+                    <div class="wspolneInfo">
+                        <span class="nazwaElementu "></span>
+                        <input id="adres" type="text" autocomplete="street-address" placeholder="Nazwa ulicy i numer" title="Podaj adres" >
+                        <div class="auto">Ten element został skopiowany lub automatycznie wypełniony. Sprawdź czy jest poprawny.</div>
+                        <img src="bank/svg/uwaga.svg" alt="" class="uwagadw" width="15px" height="25px">
+                    </div>
+                </div>
+            </div>
+            <div class="containerPrzycisk ">
+                <button type="button" class="poprzedni przycisk">Wróć</button>
+                <button type="button" class="kolejny przycisk" id="openModal" data-przycisk="7">Dalej</button>
+            </div>
+            <div class="subtelneInfo">
+                <input type="checkbox" name="subtelna_siadomos" id="7">
+                <label for="7" >Dlaczego potrzebujemy adres?</label>
+                <div class="subtelne_rozwiazanie">
+                    <p>Bez niego nie wiemy, gdzie mamy się pojawić, a teleportacja jeszcze nie jest możliwa!</p>    
+                </div>
+            </div>
+        </div>
+
+       
+        <!-- krok 7 -->
+            <div class="element testowy">
+                <div class="wspolneInfo">
+                    <span class="nazwaElementu ">Dodatkowe uwagi: <p>(opcjonalnie)</p></span>
+                    <textarea name="" id="" placeholder="Tu możesz napisać dodatkowe informacje których nie było w formularzu."></textarea>
+                </div>
+                <div class="containerPrzycisk ">
+                    <button type="button" class="poprzedni przycisk">Wróć</button>
+                    <button type="button" class="kolejny przycisk" id="openModal" type="submit">Pomiń</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id="thxmodal" class="modal">
+        <div class="modalWsystko">
+            <div class="modalZawartosc">
+                <!-- Obrazek SVG -->
+            <img src="bank/svg/biceps.svg" alt="Dziękujemy">
+            <!-- Tekst podziękowania -->
+            <p>Dziękujemy za skorzystanie z naszych usług!</p>
+            <!-- Przycisk zamykający modal -->
+            <button id="closeModal" class="close-btn"  >Super!</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

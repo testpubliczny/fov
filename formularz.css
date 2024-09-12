@@ -1,0 +1,396 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: lato, sans-serif;
+}
+
+:root{
+    --bg-strona:#fcfcfc;
+    --przycick:#d1c700a7;
+    --przycickhover:#d1c700d2;
+    --inputbg:#f1f1f1;
+    --focus:#9696969e;
+    --inputhover:#cdcdcd5f;
+    --progresBar:#d1c700a7;
+}
+
+body{
+    background-color: var(--bg-strona);
+    height: 100vh;
+    position: relative;
+}
+/* body::before{
+    content:"To jest dokładna kopia drugoej strony. Tekst pod przyciskami bedzie dodany, oraz zmiana koloru przycisku :)";
+    color: rgba(0, 0, 0, 0.1);
+    font-size: 3rem;
+    width: 100vw;
+    text-align: center;
+    top: 10%;
+    left: 50%;
+    translate: -50%;
+    position: absolute;
+} */
+#formularz{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    row-gap: 30px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.kategoriaFormularz{
+    position: relative;;
+    display: grid;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+}
+.teksttytul{
+    position: absolute;
+    left: 15%;
+    top: 30%;
+    overflow: hidden;
+    font-size: 2.4rem;
+    font-weight: 800;
+}
+
+.element{
+    display: flex;
+    flex-direction:column;
+    width: 600px;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.welement{
+    pointer-events: all;
+    opacity: 1;
+    bottom: 50%;
+    transform: translateY(50%);
+    transition: all .5s ease-in-out;
+}
+
+/* .testowy{
+    position: relative!important;
+    pointer-events:all!important;
+    opacity: 1!important;
+    justify-content: center!important;
+    align-content: center!important;
+    bottom: 0!important;
+    transform: translate(0%)!important;
+    left: 0!important;
+} */
+
+.tytul{
+    font-size: 2rem;
+    font-weight: 800;
+}
+.nazwaElementu{
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+}
+
+.nazwaElementu p{
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.wymagane::after{
+    content: "*";
+    margin-left: 5px;
+    color:red;
+}
+.element input, select{
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--inputbg);
+    margin-top: 5px;
+}
+input:hover, select:hover{
+    background-color: var(--inputhover);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+    outline: unset;
+    box-shadow: 0 0 1px 1px var(--focus);
+}
+
+.wspolneInfo{
+    position: relative;
+}
+
+input:-webkit-autofill ~ .auto{
+    display: block;
+    color: red;
+    padding: 5px;
+}
+
+input:-webkit-autofill ~ .uwaga,
+input:-webkit-autofill ~ .uwagakd,
+input:-webkit-autofill ~ .uwagadw{
+    display: block;
+}
+.uwaga{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.uwagakd{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 49%;
+}
+.uwagadw{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20%;
+}
+.auto{
+    display: none;
+    width: 100%;
+    font-size: 12px;
+}
+.razem{
+    display: grid;
+    align-items: end;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.sam{
+    grid-template-columns: 1fr!important;
+}
+.blad{
+    outline:1px red solid;
+    color: #ff0000df;
+}
+
+input:required ~ .containerPrzycisk button{
+    border: none;
+    color: grey;
+}
+textarea{
+    margin-top: 5px;
+    resize: none;
+    height: 100px;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.containerPrzycisk{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 15px;
+    margin-top: 20px;
+}
+.element button{
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 19px;
+}
+.element button:hover{
+    cursor: pointer;
+    background-color: var(--przycickhover);
+}
+
+.wykonany{
+    color: black!important;
+    cursor:pointer!important;
+    pointer-events: all!important;
+}
+
+.kolejny{
+    border: none;
+    background-color: var(--przycick);
+    color: black;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+
+.poprzedni{
+    background-color: transparent;
+    border: 2px solid var(--przycick);
+}
+
+.kolejny[data-przycisk="2"]::after,
+.kolejny[data-przycisk="3"]::after,
+.kolejny[data-przycisk="4"]::after,
+.kolejny[data-przycisk="5"]::after,
+.kolejny[data-przycisk="6"]::after,
+.kolejny[data-przycisk="7"]::after,
+.kolejny[data-przycisk="8"]::after,
+.kolejny[data-przycisk="9"]::after
+{
+    background: var(--progresBar);
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -3;
+    border-radius: 4px;
+    transition: all .5s ease-in-out;
+}
+
+.kolejny[data-przycisk="2"]::after{
+    width: 20%;
+}
+.kolejny[data-przycisk="3"]::after{
+    width: 30%;
+}
+.kolejny[data-przycisk="4"]::after{
+    width: 40%;
+}
+.kolejny[data-przycisk="5"]::after{
+    width: 50%;
+}
+.kolejny[data-przycisk="6"]::after{
+    width: 60%;
+}
+.kolejny[data-przycisk="7"]::after{
+    width: 70%;
+}
+.kolejny[data-przycisk="8"]::after{
+    width: 80%;
+}
+.kolejny[data-przycisk="9"]::after
+{
+    width: 100%;
+}
+
+
+.kolejny[data-przycisk="2"]:hover::after,
+.kolejny[data-przycisk="3"]:hover::after,
+.kolejny[data-przycisk="4"]:hover::after,
+.kolejny[data-przycisk="5"]:hover::after,
+.kolejny[data-przycisk="6"]:hover::after,
+.kolejny[data-przycisk="7"]:hover::after,
+.kolejny[data-przycisk="8"]:hover::after,
+.kolejny[data-przycisk="9"]:hover::after
+{
+    width: 100%;
+    height: 100%;
+    background-color: var(--przycickhover)!important;
+    cursor: pointer;
+    z-index: -3;
+    color: black;
+}
+.subtelneInfo{
+    margin: 20px 0;
+    position: relative
+}
+input[type="checkbox"]{
+    display:none;
+}
+.glownytytul{
+    background: #000;
+
+}
+.subtelneInfo label{
+    font-size: 17px;
+    line-height: 30px;
+    color: grey;
+    transition: color .2s ease-in-out;
+    font-weight: 500;
+}
+.subtelneInfo input:checked ~ label{
+    color:black;
+}
+input:checked ~ .subtelne_rozwiazanie{
+    height: fit-content;
+    opacity: 1!important;
+    pointer-events: all;
+}
+.subtelne_rozwiazanie{
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2rem;
+    background-color: rgba(128, 128, 128, 0.209);
+    height: unset;
+    opacity: 0!important;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+    position: absolute;
+}
+
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Ciemne tło */
+    animation: pokaz linear .5s forwards;
+}
+@keyframes pokaz {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.modalWsystko{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+}
+
+.modalZawartosc{
+    background: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    display: grid;
+    gap: 15px;
+    margin-top: 10px;
+}
+.modalZawartosc button{
+    border: 0;
+    padding: 5px;
+    background-color: var(--przycick);
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    transform: translateY(2px);
+    transition: all .2s ease-in-out;
+}
+.modalZawartosc button:hover{
+    background-color: var(--przycickhover);
+    cursor: pointer;
+    transform: translateY(0px);
+}
+
+
