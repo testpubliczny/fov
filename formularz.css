@@ -393,12 +393,13 @@ input:checked ~ .subtelne_rozwiazanie{
     transform: translateY(0px);
 }
 
+
 @media (max-width:700px){
     .element{
         width: 100%;
         padding: 0 20px;
     }
-    .wspolneInfo span{
+    .pierwszy .wspolneInfo span{
         font-size: 13px;
     }
     .wspolneInfo span p{
