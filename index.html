@@ -11,8 +11,11 @@
     <form action="" id="formularz" method="">
         <!-- krok 1 -->
             <div class="element testowy">
+                <span class="tytul">
+                    <p>Zacznijmy od kontaktu</p>
+                </span>
                 <div class="wspolneInfo">
-                    <span class="nazwaElementu wymagane">Wpisz telefon</span>
+                    <span class="nazwaElementu wymagane">Telefon</span>
                     <input id="formularz-tel" type="tel" placeholder="123 456 789" pattern="[0-9]{9}" title="Podaj numer kontaktowy"  autocomplete="tel" maxlength="11" minlength="9">
                     <div class="auto">Ten element został skopiowany lub automatycznie wypełniony. Sprawdź czy jest poprawny.</div>
                     <img src="bank/svg/uwaga.svg" alt="" class="uwaga" width="15px" height="25px">
@@ -30,14 +33,17 @@
             </div>
         <!-- krok 2 -->
         <div class="element testowy">
+            <span class="tytul">
+                <p>Teraz zaplanuj ❤</p>
+            </span>
             <div class="razem">
                 <div class="pierwszy">
-                    <span class="nazwaElementu wymagane">Wybierz date</span>
-                    <input id="formularz-dzien" type="date" placeholder="Wpisz cos" title="Podaj date" >
+                    <span class="nazwaElementu wymagane">Data</span>
+                    <input id="formularz-dzien" type="text" placeholder="Dzień" onblur="(this.type='text')" onfocus="(this.type='Date')" title="Podaj date" autocomplete="off" >
                 </div>
                 <div class="pierwszy">
-                    <span class="nazwaElementu wymagane">Wybierz czas</span>
-                    <input id="formularz-godzina" type="time" placeholder="Wpisz cos" title="Podaj godzinę" >
+                    <span class="nazwaElementu wymagane">Czas</span>
+                    <input id="formularz-godzina" type="text" placeholder="Godzina" onblur="(this.type='text')" onfocus="(this.type='time')" title="Podaj godzinę" autocomplete="off">
                 </div>
             </div>
             <div class="containerPrzycisk">
@@ -52,8 +58,16 @@
                 </div>
             </div>
         </div>
+        <script>
+            const today = new Date().toISOString().split("T")[0];
+                
+                document.getElementById('formularz-dzien').setAttribute('min', today);
+        </script>
         <!-- krok 3 -->
         <div class="element testowy">
+            <span class="tytul">
+                <p>Musisz wybrać Adg</p>
+            </span>
             <span class="nazwaElementu wymagane">Wybierz Adg</span>
             <select name="" id="formularz-nadwozie" title="Wybierz Adg" >
                 <option value="" disabled selected>Kliknij by wybrać</option>
@@ -70,7 +84,11 @@
             </div>
         </div>
         <!-- krok 4 -->
+         
         <div class="element testowy">
+            <span class="tytul">
+                <p>MUSISZ wybrać Adg</p>
+            </span>
             <span class="nazwaElementu wymagane">Wybierz Adg</span>
             <select name="" id="formularz-uslugia" title="Wybierz Adg" >
                 <option value="" disabled selected>Kliknij by wybrać</option>
@@ -87,12 +105,21 @@
         </div>
         <!-- krok 5 -->
         <div class="element testowy">
-            <span class="nazwaElementu wymagane">Jaki jesteś tier</span>
-            <select name="" id="formularz-dojazd" title="Wybierz swoj tier" >
-                <option value="" disabled selected>Kliknij by wybrać tier</option>
-                <option value="S">S tier</option>
-                <option value="L">L tier</option>
-            </select>
+            <div class="tytul">
+                <p>Twoja rizz aura</p>
+            </div>
+            <div class="obok">
+                <span class="nazwaElementu wymagane">Wybierz tier</span>
+                <div class="wybranie mobilnie">
+                    <input type="radio" name="chyba" id="auto">
+                    <label for="auto" class="wybraneInput">S tier</label>
+                </div>
+                <div class="wybranie mobilnie">
+                    <input type="radio" name="chyba" id="nauto">
+                    <label for="nauto" class="wybraneInput">L tier</label>
+                </div>
+            </div>
+
             <div class="containerPrzycisk ">
                 <button type="button" class="poprzedni przycisk">Wróć</button>
                 <button type="button" class="kolejny przycisk" data-przycisk="5">Dalej</button>
@@ -100,6 +127,9 @@
         </div>
         <!-- krok 6 -->
         <div class="element testowy">
+            <div class="tytul"></div>
+                <p>Muszę jakoś ciebie znaleść</p>
+            </div>
             <div class="wspolneInfo">
                 <span class="nazwaElementu wymagane">Wpisz nr. rejestracji</span>
                 <input id="formularz-rejestracja" type="text" autocomplete="off" placeholder="-- ----" title="Podaj adres" maxlength="9" minlength="4">
@@ -120,6 +150,9 @@
         </div>
         <!-- krok 7 -->
         <div class="element testowy" >
+            <div class="tytul"></div>
+                <p>Już jesteś na końcu.</p>
+            </div>
             <div class="razem">
                 <div class="pierwszy">
                     <span class="nazwaElementu wymagane">Wpisz adres</span>
@@ -163,6 +196,9 @@
        
         <!-- krok 7 -->
             <div class="element testowy">
+                <div class="tytul"></div>
+                    <p>Uwagi od ciebie do mnie</p>
+                </div>
                 <div class="wspolneInfo">
                     <span class="nazwaElementu ">Dodatkowe uwagi: <p>(opcjonalnie)</p></span>
                     <textarea name="" id="" placeholder="Tu możesz napisać dodatkowe informacje których nie było w formularzu."></textarea>
@@ -179,7 +215,7 @@
         <div class="modalWsystko">
             <div class="modalZawartosc">
                 <!-- Obrazek SVG -->
-            <img src="bank/svg/biceps.svg" alt="Dziękujemy">
+            <img src="zdjecie/biceps.svg" alt="Dziękujemy">
             <!-- Tekst podziękowania -->
             <p>Elegancko, dzięki za wypełnienie ankiety. Dane które zostały wpisane w formularz nigdzie nie zostały wysłane. 😃</p>
             <!-- Przycisk zamykający modal -->
