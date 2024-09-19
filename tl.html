@@ -229,7 +229,7 @@ galerie.forEach((galeria) => {
         if (!isDragging) return;  
         e.preventDefault(); 
         const x = e.pageX - galeria.offsetLeft;
-        const walk = (x - startX) * 1.5; 
+        const walk = (x - startX) * 1; 
         galeria.scrollLeft = scrollLeft - walk;
     });
 
